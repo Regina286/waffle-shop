@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photocard Holders - Waffle Shop</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Yuyu&display=swap" rel="stylesheet">
+    <!-- CSS ÚNICO -->
+    <link rel="stylesheet" href="Productos.css">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="../Shop.html" class="logo">Waffle<span>Shop</span></a>
+                <ul class="nav-links">
+                    <li><a href="../Shop.html#bienvenido">¡Bienvenido!</a></li>
+                    <li><a href="../Shop.html#productos">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="../Carrito.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">3</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="container">
+            <h1>✨ Photocard Holders</h1>
+            <p>Protege y exhibe tus photocards favoritas con estilo</p>
+            <a href="../Shop.html#productos" class="btn">Ver más productos</a>
+        </div>
+    </section>
+
+    <!-- ========== PÁGINA DEL PRODUCTO ========== -->
+    <div class="container">
+        <div class="product-page">
+
+            <!-- ===== GALERÍA DE IMÁGENES ===== -->
+            <div class="gallery">
+                <div class="main-image">
+                    <img src="Img productos/Wanted.jpeg" alt="Photocard Holder Fresa" id="mainImage">
+                </div>
+                <div class="thumbnail-grid">
+                    <img src="Img productos/Wanted.jpeg" alt="Vista 1" onclick="changeImage(this)">
+                    <img src="Img productos/Wanted_mochila.jpeg" alt="Vista 2" onclick="changeImage(this)">
+                    <img src="Img productos/Wanted_delante.jpeg" alt="Vista 3" onclick="changeImage(this)">
+                    <img src="Img productos/Wanted_LL.jpeg" alt="Vista 4" onclick="changeImage(this)">
+                </div>
+            </div>
+
+            <!-- ===== INFORMACIÓN DEL PRODUCTO ===== -->
+            <div class="product-details">
+                <h1 class="product-title">Photocard Holders: Wanted</h1>
+                
+                <div class="product-price">$65</div>
+
+                <div class="product-description">
+                    <p>Protege tus photocards favoritas con este delicioso holder temático de letrero Wanted al estilo One Piece.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Material resistente y duradero</li>
+                        <li><i class="fas fa-check-circle"></i> Diseño exclusivo</li>
+                        <li><i class="fas fa-check-circle"></i> Perfecto para coleccionistas</li>
+                        <li><i class="fas fa-check-circle"></i> Tamaño estándar para photocards</li>
+                    </ul>
+                </div>
+
+                <!-- ===== SELECTOR DE COLORES ===== -->
+                <div class="color-selector">
+                    <p class="color-label">🎨 Selecciona una opción: <span class="color-required">*Obligatorio</span></p>
+                    <div class="color-options" id="colorOptions"></div>
+                    <p class="color-selected" id="colorSelected">Variable seleccionada: <span>Ninguno</span></p>
+                    <p class="color-error" id="colorError" style="display: none;">
+                        ⚠️ Por favor, selecciona una opción antes de añadir al carrito.
+                    </p>
+                </div>
+
+                <div class="product-actions">
+                    <button class="btn-action btn-add-cart" onclick="addToCartWithColor()">
+                        <i class="fas fa-cart-plus"></i> Añadir al carrito
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>TiendaOnline</h3>
+                    <p style="opacity:0.7;">La tiendita con todos tus personajes y idols favoritos.</p>
+                </div>
+                <div>
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#bienvenido">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="#">Puntos de entrega</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Sigueme para mas novedades:</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/wafflearte.030?igsh=MTQ3ZzJ2azlndngzOA=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@wafflearte.030?_r=1&_t=ZS-98RzpRBHjkr"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 WaffleShop. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+
+    <!-- ✅ PASO 1: DEFINIR LOS COLORES PERSONALIZADOS PRIMERO -->
+    <script>
+        // Opciones de para Holders
+        const CUSTOM_COLORS = [
+            { name: 'Sin Llavero', hex: '#e74c3c', priceExtra:0 },
+            { name: 'Sin Llavero + photocard', hex: '#9b59b6', priceExtra:5 },
+            { name: 'Con llavero', hex: '#f39c12', priceExtra:5 },
+            { name: 'Con Llavero + Photocard', hex: '#e91e63', priceExtra:10 },
+        ];
+        
+        console.log('🎨 Colores de photocards holders cargados:', CUSTOM_COLORS);
+    </script>
+
+    <!-- ✅ PASO 2: CARGAR LOS SCRIPTS -->
+    <script src="../carrito.js"></script>
+    <script>
+        function renderCart() {
+            const cart = getCart(); // ← Usa la función de carrito.js
+        }
+    </script>
+    <script src="color-selector.js"></script>
+
+    <script>
+        // Configurar el producto con su ID, nombre, precio e imagen
+        setProductConfig(5, 'PhotocardWanted', 65, 'Wanted.jpeg');
+        // ✅ ACTIVAR PRECIOS POR COLOR (IMPORTANTE)
+        enableColorPrices(CUSTOM_COLORS);
+    </script>
+
+    <!-- ========== JAVASCRIPT PARA CAMBIAR IMAGEN ========== -->
+    <script>
+        function changeImage(element) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = element.src;
+            
+            const thumbnails = document.querySelectorAll('.thumbnail-grid img');
+            thumbnails.forEach(img => img.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstThumb = document.querySelector('.thumbnail-grid img');
+            if (firstThumb) {
+                firstThumb.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
+
+</body>
+</html>

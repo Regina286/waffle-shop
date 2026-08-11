@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llaveros Santos Bravos - Waffle Shop</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Yuyu&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="Productos.css">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="../Shop.html" class="logo">Waffle<span>Shop</span></a>
+                <ul class="nav-links">
+                    <li><a href="../Shop.html#bienvenido">¡Bienvenido!</a></li>
+                    <li><a href="../Shop.html#productos">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="../Carrito.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="container">
+            <h1>✨ Llaveros Santos Bravos</h1>
+            <p>¡Decora y combina con amigas tus llaveros de Santos Bravos!</p>
+            <a href="../Shop.html#productos" class="btn">Ver más productos</a>
+        </div>
+    </section>
+
+    <!-- ========== PÁGINA DEL PRODUCTO ========== -->
+    <div class="container">
+        <div class="product-page">
+
+            <!-- ===== GALERÍA DE IMÁGENES ===== -->
+            <div class="gallery">
+                <div class="main-image">
+                    <img src="Img productos/SB.jpeg" alt="LLaveros SB" id="mainImage">
+                </div>
+                <div class="thumbnail-grid">
+                    <img src="Img productos/SB.jpeg" alt="Portada" onclick="changeImage(this)">
+                    <img src="Img productos/SB2.jpeg" alt="Llaveros SB" onclick="changeImage(this)">
+                </div>
+            </div>
+
+            <!-- ===== INFORMACIÓN DEL PRODUCTO ===== -->
+            <div class="product-details">
+                <h1 class="product-title">Llaveros Santos Bravos</h1>
+                
+                <div class="product-price">$60</div>
+
+                <div class="product-description">
+                    <p>¡Decora y combina con los llaveros más Bravos!.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Llaveros de los chicos de Santos Bravos (falta el guapo de Ale).</li>
+                        <li><i class="fas fa-check-circle"></i> Doble vista</li>
+                        <li><i class="fas fa-check-circle"></i> 4 laveros para compartir</li>
+                    </ul>
+                </div>
+
+                <div class="product-actions">
+                    <button class="btn-action btn-add-cart" onclick="addToCart()">
+                        <i class="fas fa-cart-plus"></i> Añadir al carrito
+                    </button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Waffle Shop</h3>
+                    <p style="opacity:0.7;">La tiendita con todos tus personajes y idols favoritos.</p>
+                </div>
+                <div>
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="../Shop.html#bienvenido">Inicio</a></li>
+                        <li><a href="../Shop.html#productos">Productos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="#">Puntos de entrega</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Sígueme para más novedades:</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/wafflearte.030"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@wafflearte.030"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Waffle Shop. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    
+
+    <!-- ✅ PASO 2: CARGAR LOS SCRIPTS -->
+    <script src="../carrito.js"></script>
+
+    <!-- Usa addToCart directamente -->
+    <button class="btn-action btn-add-cart" onclick="addToCart(17, 'Pines Anime', 60, 'Atarashi.jpeg')">
+        <i class="fas fa-cart-plus"></i> Añadir al carrito
+    </button>
+
+
+    <!-- ========== JAVASCRIPT PARA CAMBIAR IMAGEN ========== -->
+    <script>
+        function changeImage(element) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = element.src;
+            
+            const thumbnails = document.querySelectorAll('.thumbnail-grid img');
+            thumbnails.forEach(img => img.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstThumb = document.querySelector('.thumbnail-grid img');
+            if (firstThumb) {
+                firstThumb.classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>

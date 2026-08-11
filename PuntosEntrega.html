@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puntos de Entrega - Waffle Shop</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Yuyu&display=swap" rel="stylesheet">
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="ShopStyle.css">
+    <!-- ===== HOJA DE ESTILOS DE LEAFLET (¡OBLIGATORIA!) ===== -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="Shop.html" class="logo">Waffle<span>Shop</span></a>
+                <ul class="nav-links">
+                    <li><a href="Shop.html#bienvenido">¡Bienvenido!</a></li>
+                    <li><a href="Shop.html#productos">Productos</a></li>
+                    <li><a href="PuntosEntrega.html">Puntos de entrega</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="Carrito.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== PÁGINA DEL MAPA ========== -->
+    <section class="map-page">
+        <div class="container">
+            <h1>📍 Puntos de Entrega</h1>
+            <p class="subtitle">Encuentra la ubicación más cercana para recoger tu pedido</p>
+            
+            <!-- Contenedor del mapa -->
+            <div id="map"></div>
+
+            <!-- Lista de puntos -->
+            <div class="points-list" id="pointsList">
+                <!-- Se llenará con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Waffle Shop</h3>
+                    <p style="opacity:0.7;">La tiendita con todos tus personajes y idols favoritos.</p>
+                </div>
+                <div>
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="Shop.html#bienvenido">Inicio</a></li>
+                        <li><a href="Shop.html#productos">Productos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="PuntosEntrega.html">Puntos de entrega</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Sígueme para más novedades:</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/wafflearte.030"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@wafflearte.030"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Waffle Shop. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // ========== CONFIGURACIÓN DE PUNTOS ==========
+        const puntos = [
+            {
+                nombre: "Aurrera Satélite",
+                direccion: "Av. de la Luz 401, Santa Ana, Cosmos, 76110 Santiago de Querétaro, Qro.",
+                coords: [20.63612653276992, -100.45279567514409],
+                horario: "Lunes, Miércoles, Viernes"
+            },
+            {
+                nombre: "La Comer Juriquilla",
+                direccion: "Blvd. Universitario 405, 76230 Juriquilla, Qro.",
+                coords: [20.720018829892467, -100.44827666165138],
+                horario: "Martes y Jueves"
+            },
+            {
+                nombre: "Aurrera Peñaflor",
+                direccion: "Blvd Quintana Arrioja 4201, Ciudad del Sol, 76116 Santiago de Querétaro, Qro.",
+                coords: [20.648119031198615, -100.47971825979832],
+                horario: "Lunes, Miércoles, Viernes"
+            },
+            {
+                nombre: "Sendero",
+                direccion: "Av. Revolución, Puerta del Sol II, 76114 Santiago de Querétaro, Qro.",
+                coords: [20.619008069682973, -100.4406892766513],
+                horario: "Lunes, Miércoles, Viernes"
+            },
+            {
+                nombre: "Plaza de las Américas",
+                direccion: "Av. Constituyentes 183, Plaza de las Americas, 76059 Santiago de Querétaro, Qro.",
+                coords: [20.588501620461223, -100.37479164235795],
+                horario: "Sábado"
+            }
+        ];
+
+        // ========== INICIALIZAR MAPA ==========
+        // Centrar en Querétaro
+        const map = L.map('map').setView([20.5888, -100.3898], 13);
+
+        // Cargar azulejos del mapa (OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        }).addTo(map);
+
+        // ========== CREAR MARCADORES Y LISTA ==========
+        const pointsList = document.getElementById('pointsList');
+        let listHTML = '';
+
+        puntos.forEach((punto, index) => {
+            // --- Crear marcador con popup ---
+            const marker = L.marker(punto.coords).addTo(map);
+            
+            // Popup con información detallada
+            marker.bindPopup(`
+                <div style="font-family: 'Segoe UI', sans-serif; min-width: 200px;">
+                    <h3 style="margin: 0 0 5px 0; color: #624c32;">${punto.nombre}</h3>
+                    <p style="margin: 5px 0; color: #555;">
+                        <i class="fas fa-map-pin" style="color: #f8aa0f;"></i> ${punto.direccion}
+                    </p>
+                    <p style="margin: 5px 0; color: #555;">
+                        <i class="far fa-clock" style="color: #f8aa0f;"></i> ${punto.horario}
+                    </p>
+                    <small style="color: #999;">Haz clic en el marcador</small>
+                </div>
+            `);
+
+            // Abrir el popup del primer punto automáticamente
+            if (index === 0) {
+                marker.openPopup();
+            }
+
+            // --- Crear tarjeta en la lista ---
+            listHTML += `
+                <div class="point-card" onclick="centrarMapa(${index})" style="cursor: pointer;">
+                    <h3>
+                        <i class="fas fa-store point-icon"></i>
+                        ${punto.nombre}
+                    </h3>
+                    <p><i class="fas fa-map-pin" style="color: #f8aa0f; width: 18px;"></i> ${punto.direccion}</p>
+                    <p><i class="far fa-clock" style="color: #f8aa0f; width: 18px;"></i> ${punto.horario}</p>
+                </div>
+            `;
+        });
+
+        pointsList.innerHTML = listHTML;
+
+        // ========== FUNCIÓN PARA CENTRAR MAPA ==========
+        function centrarMapa(index) {
+            const punto = puntos[index];
+            map.flyTo(punto.coords, 16, {
+                duration: 1.5 // Duración de la animación en segundos
+            });
+            
+            // Abrir el popup del marcador (buscamos el marcador por índice)
+            // Nota: Leaflet no guarda los marcadores en un array fácilmente
+            // Usamos un enfoque alternativo: abrimos popup después del vuelo
+            setTimeout(() => {
+                // Buscar todos los marcadores y abrir el correspondiente
+                map.eachLayer((layer) => {
+                    if (layer instanceof L.Marker) {
+                        const latLng = layer.getLatLng();
+                        if (latLng.lat === punto.coords[0] && latLng.lng === punto.coords[1]) {
+                            layer.openPopup();
+                        }
+                    }
+                });
+            }, 1600);
+        }
+
+        // ========== AJUSTAR MAPA AL TAMAÑO DE LA PANTALLA ==========
+        setTimeout(() => {
+            map.invalidateSize();
+        }, 500);
+
+        console.log('🗺️ Mapa de puntos de entrega cargado correctamente');
+        console.log(`📍 ${puntos.length} puntos disponibles`);
+    </script>
+
+</body>
+</html>

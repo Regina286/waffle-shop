@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Poster KPOP - Waffle Shop</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Yuyu&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="Productos.css">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="../Shop.html" class="logo">Waffle<span>Shop</span></a>
+                <ul class="nav-links">
+                    <li><a href="../Shop.html#bienvenido">¡Bienvenido!</a></li>
+                    <li><a href="../Shop.html#productos">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="../Carrito.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="container">
+            <h1>✨ Mini Posters de KPOP</h1>
+            <p>Decora con mini posters de tus idols favoritos</p>
+            <a href="../Shop.html#productos" class="btn">Ver más productos</a>
+        </div>
+    </section>
+
+    <!-- ========== PÁGINA DEL PRODUCTO ========== -->
+    <div class="container">
+        <div class="product-page">
+
+            <!-- ===== GALERÍA DE IMÁGENES ===== -->
+            <div class="gallery">
+                <div class="main-image">
+                    <img src="Img productos/Portada_Mini.png" alt="Digital Circus Sticker" id="mainImage">
+                </div>
+                <div class="thumbnail-grid">
+                    <img src="Img productos/Portada_Mini.png" alt="Portada" onclick="changeImage(this)">
+                    <img src="Img productos/BTS_Mini.jpeg" alt="BTS" onclick="changeImage(this)">
+                    <img src="Img productos/BTS2_Mini.jpeg" alt="BTS" onclick="changeImage(this)">
+                    <img src="Img productos/XH_Mini.jpeg" alt="Xdinary Heroes" onclick="changeImage(this)">
+                    <img src="Img productos/Huntrix_Mini.jpeg" alt="Huntrix" onclick="changeImage(this)">
+                    <img src="Img productos/Zoey_Mini.jpeg" alt="Zoey" onclick="changeImage(this)">
+                    <img src="Img productos/Mira_Mini.jpeg" alt="Mira" onclick="changeImage(this)">
+                    <img src="Img productos/SajaBoys_Mini.jpeg" alt="Saja Boys" onclick="changeImage(this)">
+                    <img src="Img productos/SajaBoys2_Mini.jpeg" alt="Saya Boys" onclick="changeImage(this)">
+                    <img src="Img productos/STVB_MIni.jpeg" alt="STBV" onclick="changeImage(this)">
+                    <img src="Img productos/STVB2_Mini.jpeg" alt="STBV" onclick="changeImage(this)">
+                    <img src="Img productos/BP_Mini.jpeg" alt="BP" onclick="changeImage(this)">
+                    <img src="Img productos/Jennie_Mini.jpeg" alt="Jennie" onclick="changeImage(this)">
+                    <img src="Img productos/Rose2_Mini.jpeg" alt="Rose" onclick="changeImage(this)">
+                    <img src="Img productos/Jisoo_Mini.jpeg" alt="Jisoo" onclick="changeImage(this)">
+                    <img src="Img productos/Lisa_Mini.jpeg" alt="Lisa" onclick="changeImage(this)">
+                    <img src="Img productos/Rose_Mini.jpeg" alt="Rose" onclick="changeImage(this)">
+                </div>
+            </div>
+
+            <!-- ===== INFORMACIÓN DEL PRODUCTO ===== -->
+            <div class="product-details">
+                <h1 class="product-title">Mini Poster KPOP</h1>
+                
+                <div class="product-price">$15</div>
+
+                <div class="product-description">
+                    <p>Decora con las stickers de tus idols favoritos.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Mini póster</li>
+                        <li><i class="fas fa-check-circle"></i> Meterial adhesivo o postal. Revise el material seleccionado al comprar</li>
+                        <li><i class="fas fa-check-circle"></i> Perfecto para decorar</li>
+                    </ul>
+                </div>
+
+                <!-- ===== SELECTOR DE COLORES ===== -->
+                <div class="color-selector">
+                    <p class="color-label">🎨 Selecciona un idol: <span class="color-required">*Obligatorio</span></p>
+                    <div class="color-options" id="colorOptions"></div>
+                    <p class="color-selected" id="colorSelected">Idol seleccionado: <span>Ninguno</span></p>
+                    <p class="color-error" id="colorError" style="display: none;">
+                        ⚠️ Por favor, selecciona un idol antes de añadir al carrito.
+                    </p>
+                </div>
+
+                <div class="product-actions">
+                    <button class="btn-action btn-add-cart" onclick="addToCartWithColor()">
+                        <i class="fas fa-cart-plus"></i> Añadir al carrito
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Waffle Shop</h3>
+                    <p style="opacity:0.7;">La tiendita con todos tus personajes y idols favoritos.</p>
+                </div>
+                <div>
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="../Shop.html#bienvenido">Inicio</a></li>
+                        <li><a href="../Shop.html#productos">Productos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="#">Puntos de entrega</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Sígueme para más novedades:</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/wafflearte.030"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@wafflearte.030"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Waffle Shop. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    
+    <!-- ✅ PASO 1: DEFINIR LOS COLORES PERSONALIZADOS PRIMERO -->
+    <script>
+        // Colores para Digital Circus (personajes)
+        const CUSTOM_COLORS = [
+            { name: 'Xdinary Heroes', hex: '#e74c3c', priceExtra:0 },
+            { name: 'Santos Bravos 1', hex: '#9b59b6', priceExtra:0},
+            { name: 'Santos Bravos 2', hex: '#f39c12', priceExtra:0 },
+            { name: 'BTS 1', hex: '#e91e63', priceExtra:0 },
+            { name: 'BTS 2', hex: '#14750D' , priceExtra:0},
+            { name: 'Black Pink (adhesivo)', hex: '#FFA8E5', priceExtra:0 },
+            { name: 'Lisa (adhesivo)', hex: '#0D756E', priceExtra:0 },
+            { name: 'Jisoo (adhesivo)', hex: '#6E0D75', priceExtra:0 },
+            { name: 'Jennie (adhesivo)', hex: '#750D14', priceExtra:0 },
+            { name: 'Rose 1 (adhesivo)', hex: '#CED418', priceExtra:0 },
+            { name: 'Rose 2 (adhesivo)', hex: '#18CED4', priceExtra:0 },
+            { name: 'Sserafim (adhesivo)', hex: '#1E18D4', priceExtra:0 },
+            { name: 'BTS 1 (adhesivo)', hex: '#CA48D8', priceExtra:0 },
+            { name: 'BTS 2 (adhesivo)', hex: '#D8489F', priceExtra:0 },
+            { name: 'Saja Boys 1 (adhesivo)', hex: '#D84856', priceExtra:0 },
+            { name: 'Saja Boys 2 (adhesivo)', hex: '#5847A9', priceExtra:0 },
+            { name: 'Huntrix (adhesivo)', hex: '#A95747', priceExtra:0 },
+            { name: 'Zoey (adhesivo)', hex: '#47A2A9', priceExtra:0 },
+            { name: 'Mira (adhesivo)', hex: '#E65AE2', priceExtra:0 },
+        ];
+        
+        console.log('🎨 Colores de Digital Circus cargados:', CUSTOM_COLORS);
+    </script>
+
+    <!-- ✅ PASO 2: CARGAR LOS SCRIPTS -->
+    <script src="../carrito.js"></script>
+    <script>
+    function renderCart() {
+        const cart = getCart(); // ← Usa la función de carrito.js
+    }
+</script>
+    <script src="color-selector.js"></script>
+
+    <script>
+    // Configurar el producto con su ID, nombre, precio e imagen
+    setProductConfig(12, 'Mini Póster KPOP', 15, 'Portada_Mini.png');
+    enableColorPrices(CUSTOM_COLORS);
+    </script>
+
+    <!-- ========== JAVASCRIPT PARA CAMBIAR IMAGEN ========== -->
+    <script>
+        function changeImage(element) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = element.src;
+            
+            const thumbnails = document.querySelectorAll('.thumbnail-grid img');
+            thumbnails.forEach(img => img.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstThumb = document.querySelector('.thumbnail-grid img');
+            if (firstThumb) {
+                firstThumb.classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>

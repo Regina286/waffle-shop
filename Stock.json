@@ -1,0 +1,355 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Photocard Holder: Boing Mango",
+            "precio": 75,
+            "imagen": "Mango-Portada.jpeg",
+            "variantes":[
+                { "nombre": "Sin Llavero", "stock":6 },
+                { "nombre": "Sin Llavero", "stock":6},
+                { "nombre": "Con llavero", "stock":6},
+                { "nombre": "Con Llavero + Photocard", "stock":6}
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Photocard Holder: Boing Fresa",
+            "precio": 75,
+            "imagen": "Fresa.jpeg",
+            "variantes":[
+                { "nombre": "Sin Llavero", "stock":9 },
+                { "nombre": "Sin Llavero", "stock":9},
+                { "nombre": "Con llavero", "stock":9},
+                { "nombre": "Con Llavero + Photocard", "stock":9}
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "Photocard Holder: Boing Guayaba",
+            "precio": 75,
+            "stock": 10,
+            "imagen": "Guayaba.jpeg",
+            "variantes":[
+                { "nombre": "Sin Llavero", "stock":10 },
+                { "nombre": "Sin Llavero", "stock":10},
+                { "nombre": "Con llavero", "stock":10},
+                { "nombre": "Con Llavero + Photocard", "stock":10}
+            ]
+        },
+        {
+            "id": 4,
+            "nombre": "Photocard Holder: Cámara",
+            "precio": 75,
+            "stock": 9,
+            "imagen": "Camara.jpeg",
+            "variantes":[
+                { "nombre": "Sin Llavero", "stock":9 },
+                { "nombre": "Sin Llavero", "stock":9},
+                { "nombre": "Con llavero", "stock":9},
+                { "nombre": "Con Llavero + Photocard", "stock":9}
+            ]
+        },
+        {
+            "id": 5,
+            "nombre": "Photocard Holder: Wanted",
+            "precio": 65,
+            "stock": 9,
+            "imagen": "Wanted.jpeg",
+            "variantes":[
+                { "nombre": "Sin Llavero", "stock":9 },
+                { "nombre": "Sin Llavero", "stock":9},
+                { "nombre": "Con llavero", "stock":9},
+                { "nombre": "Con Llavero + Photocard", "stock":9}
+            ]
+        },
+        {
+            "id": 6,
+            "nombre": "Digital Circus Sticker",
+            "precio": 10,
+            "imagen": "Wanted.jpeg",
+             "variantes": [
+                { "nombre": "Pomni", "stock": 8 },
+                { "nombre": "Jax", "stock": 10 },
+                { "nombre": "Kinger", "stock": 8 },
+                { "nombre": "Gangle", "stock": 8 },
+                { "nombre": "Zooble", "stock": 10 },
+                { "nombre": "Ragatha", "stock": 12 },
+                { "nombre": "Caine", "stock": 10 }
+            ]
+        },
+        {
+            "id": 7,
+            "nombre": "One Piece Sticker",
+            "precio": 10,
+            "imagen": "PortadaOP.jpeg",
+             "variantes": [
+                { "nombre": "Luffy", "stock": 4 },
+                { "nombre": "Nami", "stock": 20 },
+                { "nombre": "Zoro", "stock": 6 },
+                { "nombre": "Usopp", "stock": 37 },
+                { "nombre": "Sanji", "stock": 12 },
+                { "nombre": "Chopper", "stock": 33 },
+                { "nombre": "Robin", "stock": 47 },
+                { "nombre": "Franky", "stock": 42 },
+                { "nombre": "Brook", "stock": 34 },
+                { "nombre": "Jinbe", "stock": 47 },
+                { "nombre": "Paquete East Blue", "stock": 4 },
+                { "nombre": "Paquete Grand Line", "stock": 33 }
+            ]
+        },
+        {
+            "id": 8,
+            "nombre": "SKZOO Sticker",
+            "precio": 10,
+            "imagen": "PortadaSKZ.jpeg",
+             "variantes": [
+                { "nombre": "LeePuppy", "stock": 18 },
+                { "nombre": "JiniQuo", "stock": 40 },
+                { "nombre": "Bbokari", "stock": 46 },
+                { "nombre": "Dwaeki", "stock": 44 },
+                { "nombre": "Foxy", "stock": 48 },
+                { "nombre": "WolfChan", "stock": 47 },
+                { "nombre": "Familia JinQuoka", "stock": 40 },
+                { "nombre": "Familia PuppyLee", "stock": 18 }
+            ]
+        },
+        {
+            "id": 9,
+            "nombre": "Alien Stage Sticker",
+            "precio": 10,
+            "imagen": "AlienStage_Portada.jpeg",
+             "variantes": [
+                { "nombre": "Luka", "stock": 26 },
+                { "nombre": "Hyuna", "stock": 28 },
+                { "nombre": "Mizi", "stock": 26 },
+                { "nombre": "Sua", "stock": 26 },
+                { "nombre": "Till", "stock": 27 },
+                { "nombre": "Ivan", "stock": 13 }
+            ]
+        },
+        {
+            "id": 10,
+            "nombre": "Llavero Stray Kids NFC",
+            "precio": 50,
+            "imagen": "Portada_LLavero.jpeg",
+             "variantes": [
+                { "nombre": "This & That", "stock": 20 },
+                { "nombre": "SKZ-REPLAY 2026", "stock": 10 }
+            ]
+        },
+        {
+            "id":11,
+            "nombre": "Mini Poster SKZ",
+            "precio":15,
+            "imagen":"PortadaSKZ.jpeg",
+            "variantes": [
+                { "nombre": "Stray Kids (Adhesivo)", "stock":1},
+                { "name": "All you need', hex: '#CF3611", "stock":2},
+                { "name": "All you need (Adhesivo)", "stock":1},
+                { "name": "Bang Chan 1 (Adhesivo)", "stock":2 },
+                { "name": "Bang Chan 2 (Adhesivo)", "stock":1 },
+                { "name": "Lee Know (Adhesivo)", "stock":2},
+                { "name": "Changbin 1 (Adhesivo)", "stock": 2 },
+                { "name": "Changbin 2 (Adhesivo)", "stock":2 },
+                { "name": "Changbin 3 (Adhesivo", "stock": 2},
+                { "name": "Han 1 (Adhesivo)", "stock": 2 },
+                { "name": "Han 2 (Adhesivo)", "stock": 1 },
+                { "name": "Hyunjin 1 (Adhesivo)", "stock":2 },
+                { "name": "Hyunjin 2 (Adhesivo)", "stock":2 },
+                { "name": "Felix 1 (Adhesivo)", "stock": 2},
+                { "name": "Felix 2 (Adhesivo)", "stock": 1},
+                { "name": "Felix 3 (Adhesivo)", "stock": 2},
+                { "name": "Felix 4 (Adhesivo)", "stock": 2},
+                { "name": "Seungmin 1 (Adhesivo)", "stock": 2},
+                { "name": "Seungmin 2 (Adhesivo)", "stock": 2},
+                { "name": "IN (Adhesivo)", "stock": 2}
+            ]   
+        },
+        {
+            "id":12,
+            "nombre":"Mini Poster KPOP",
+            "precio":15,
+            "imagen":"Portada_Mini",
+            "variantes":[
+                { "nombre": "Xdinary Heroes", "stock":2 },
+                { "nombre": "Santos Bravos 1", "stock":2},
+                { "nombre": "Santos Bravos 2", "stock": 2},
+                { "nombre": "BTS 1","stock":4},
+                { "nombre": "BTS 2", "stock":4},
+                { "nombre": "Black Pink (adhesivo)", "stock":2 },
+                { "nombre": "Lisa (adhesivo)", "stock":2},
+                { "nombre": "Jisoo (adhesivo)", "stock":2},
+                { "nombre": "Jennie (adhesivo)","stock": 1},
+                { "nombre": "Rose 1 (adhesivo)", "stock": 2},
+                { "nombre": "Rose 2 (adhesivo)", "stock":1 },
+                { "nombre": "Sserafim (adhesivo)", "stock": 4},
+                { "nombre": "BTS 1 (adhesivo)", "stock":2},
+                { "nombre": "BTS 2 (adhesivo)", "stock": 2},
+                { "nombre": "Saja Boys 1 (adhesivo)", "stock":3 },
+                { "nombre": "Saja Boys 2 (adhesivo)", "stock": 3},
+                { "nombre": "Huntrix (adhesivo)", "stock": 2},
+                { "nombre": "Zoey (adhesivo)", "stock": 1},
+                { "nombre": "Mira (adhesivo)", "stock": 2}
+            ]
+        },
+        {
+            "id":13,
+            "nombre":"Mini Poster Anime",
+            "precio":15,
+            "imagen":"PortadaMiniAni",
+            "variantes":[
+                { "nombre": "Steel Ball Run 1", "stock":2 },
+                { "nombre": "Steel Ball Run 2", "stock": 2},
+                { "nombre": "Steel Ball Run 1 (Adhesivo)", "stock": 2},
+                { "nombre": "Steel Ball Run 2 (Adhesivo)","stock": 2},
+                { "nombre": "Cowboy Bepop 1", "stock": 2},
+                { "nombre": "Cowboy Bepop 2", "stock": 2 },
+                { "nombre": "Cowboy Bepop 1 (Adhesivo)", "stock": 1},
+                { "nombre": "Cowboy Bepop 2 (Adhesivo)", "stock": 2},
+                { "nombre": "Frieren","stock":2},
+                { "nombre": "Frieren (Adhesivo)", "stock":2},
+                { "nombre": "AOT 1", "stock": 2},
+                { "nombre": "AOT 2","stock": 2},
+                { "nombre": "AOT 2 (Adhesivo)", "stock": 1},
+                { "nombre": "Chainsawman 1", "stock": 2},
+                { "nombre": "Chainsawman 2", "stock": 2},
+                { "nombre": "Chainsawman 2 (Adhesivo)", "stock": 1},
+                { "nombre": "Kimetsu no Yaiba 1", "stock":2 },
+                { "nombre": "Kimetsu no Yaiba 2", "stock": 2},
+                { "nombre": "Kimetsu no Yaiba 1 (Adhesivo)", "stock": 1},
+                { "nombre": "Kimetsu no Yaiba 2 (Adhesivo)", "stock": 1},
+                { "nombre": "Luffy", "stock":2 },
+                { "nombre": "Luffy (Adhesivo)", "stock": 2},
+                { "nombre": "Brook", "stock":2 },
+                { "nombre": "Brook (Adhesivo)", "stock": 1},
+                { "nombre": "You and I are polar opposites", "stock": 2},
+                { "nombre": "You and I are polar opposites (Adhesivo)", "stock": 1},
+                { "nombre": "Digital Circus", "stock": 2},
+                { "nombre": "Digital Circus (Adhesivo)", "stock":2 },
+                { "nombre": "Hat Witch Atelier", "stock":2 },
+                { "nombre": "Nezuko (Adhesivo)", "stock":1 },
+                { "nombre": "Haikyuu", "stock": 2},
+                { "nombre": "Dr Stone", "stock": 2},
+                { "nombre": "Jujutsu no kaisen", "stock":1 }
+            ]
+        },
+        {
+            "id":14,
+            "nombre":"LLaveros Stray Kids",
+            "precio":20,
+            "imagen":"SKZLL1",
+            "variantes":[
+                {"nombre":"Bang Chan", "stock":1},
+                {"nombre":"Lee Know", "stock":1},
+                {"nombre":"Hyunjin", "stock":1},
+                {"nombre":"Changbin", "stock":1},
+                {"nombre":"Han", "stock":1},
+                {"nombre":"Felix", "stock":1},
+                {"nombre":"Seungmin", "stock":1},
+                {"nombre":"IN", "stock":1}
+            ]  
+        },
+        {
+            "id":15,
+            "nombre":"LLaveros Santos Bravos",
+            "precio":60,
+            "imagen":"SB",
+            "stock":1
+        },
+        {
+            "id":16,
+            "nombre":"LLaveros Sanrio",
+            "precio":60,
+            "imagen":"SanrioLL",
+            "stock":1
+        },
+        {
+            "id":17,
+            "nombre":"LLaveros Atarashi Gaccko",
+            "precio":60,
+            "imagen":"Atarashi",
+            "stock":1
+        },
+        {
+            "id":18,
+            "nombre":"LLaveros Acrílicos",
+            "precio":60,
+            "imagen":"SB",
+            "stock":1
+        },
+        {
+            "id":19,
+            "nombre":"Botones One Piece",
+            "precio":15,
+            "imagen":"PortadaBotonOP",
+            "variantes":[
+                {"nombre":"Luffy","stock":7},
+                {"nombre":"Zoro","stock":5},
+                {"nombre":"Sanji","stock":6},
+                {"nombre":"Robin","stock":7},
+                {"nombre":"Franky","stock":8},
+                {"nombre":"Usopp","stock":8},
+                {"nombre":"Jinbe","stock":9},
+                {"nombre":"Brook","stock":7}
+            ]
+        },
+        {
+            "id":20,
+            "nombre":"Botones SKZOO",
+            "precio":15,
+            "imagen":"PortadaBotonSKZO",
+            "variantes":[
+                {"nombre":"PuppyM + Leebit","stock":9},
+                {"nombre":"Jiniret + Quokka","stock":6},
+                {"nombre":"FoxyNy","stock":7},
+                {"nombre":"Bbokari","stock":7}
+            ]
+        },
+        {
+           "id":21,
+            "nombre":"Pines Anime",
+            "precio":60,
+            "imagen":"Portada_PinA",
+            "variantes":[
+                {"nombre":"MaoMao","stock":2},
+                {"nombre":"Jinshi + MaoMao","stock":1},
+                {"nombre":"Escudo AOT (negro)","stock":1},
+                {"nombre":"Escudo AOT (azul)","stock":1},
+                {"nombre":"Okarun 1","stock":1},
+                {"nombre":"Okarun 2","stock":1},
+                {"nombre":"Turbo abuela 1","stock":1},
+                {"nombre":"Turbo abuela 2","stock":1},
+                {"nombre":"Turbo abuela 3","stock":1},
+                {"nombre":"I love Nana","stock":1},
+                {"nombre":"Nana vasos","stock":1},
+                {"nombre":"Nana Kiss","stock":1},
+                {"nombre":"Chainsaw man","stock":1},
+                {"nombre":"Power","stock":1}
+            ] 
+        },
+        {
+            "id":22,
+            "nombre":"Telemachus",
+            "precio":15,
+            "imagen":"Telemachus",
+            "variantes":[
+                {"nombre":"Boton","stock":7},
+                {"nombre":"Sticker","stock":35}
+            ]
+        },
+        {
+            "id":23,
+            "nombre":"Shojo Stickers",
+            "precio":10,
+            "imagen":"PortadaShojo",
+            "variantes":[
+                {"nombre":"Skip to Loafer", "stock":12},
+                {"nombre":"Host Club","stock":15},
+                {"nombre":"You and I are polar opposites","Stock":15}
+            ]
+
+        }
+
+    ]
+}

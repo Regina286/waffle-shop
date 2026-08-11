@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waffle Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Yuyu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ShopStyle.css">
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Waffle<span>Shop</span></a>
+                <ul class="nav-links">
+                    <li><a href="#bienvenido">¡Bienvenido!</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="PuntosEntrega.html">Puntos de entrega</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="Carrito.html" target="_self">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div id="bienvenido">
+            <div class="container">
+                <h1>¡Bienvenido!</h1>
+                <p>¡La tiendita Waffle te da la bienvenida y te agradece por tu visita! Actualmente solo hacemos entregas de los productos en la ciudad de Querétaro</p>
+                <a href="#productos" class="btn">¡A comprar!</a>
+                <a href="PuntosEntrega.html" class="btn">Puntos de entrega</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRODUCTOS ========== -->
+    <div id="productos">
+        <div class="container">
+            <div class="filters">
+                <button class="filter-btn active">Todos</button>
+                <button class="filter-btn">Photocard Holder</button>
+                <button class="filter-btn">Mini-poster</button>
+                <button class="filter-btn">Stickers</button>
+                <button class="filter-btn">Llaveros</button>
+                <button class="filter-btn">Pines</button>
+            </div>
+
+            <div class="products-grid">
+                
+                <!-- Photocard Holder: Mango -->
+                <div class="product-card" data-category="photocard">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/Mango-Portada.jpeg" alt="Photocard Holders: Boing Mango">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Photocard Holders: Boing Mango</h3>
+                        <div class="product-price">$75</div>
+                        <div class="product-actions">
+                            <a href="Productos/PhotocardMango.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(1, 'Photocard Holder: Boing Mango', 'Productos/PhotocardMango.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photocard Holder: Fresa -->
+                <div class="product-card" data-category="photocard">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/Fresa.jpeg" alt="Photocard Holders: Boing Fresa">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Photocard Holders: Boing Fresa</h3>
+                        <div class="product-price">$75</div>
+                        <div class="product-actions">
+                            <a href="Productos/PhotocardFresa.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(2, 'Photocard Holder: Boing Fresa', 'Productos/PhotocardFresa.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photocard Holder: Guayaba -->
+                <div class="product-card" data-category="photocard">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/Guayaba.jpeg" alt="Photocard Holders: Boing Guayaba">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Photocard Holders: Boing Guayaba</h3>
+                        <div class="product-price">$75</div>
+                        <div class="product-actions">
+                            <a href="Productos/PhotocardGuayaba.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(3, 'Photocard Holder: Boing Guayaba', 'Productos/PhotocardGuayaba.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photocard Holder: Cámara -->
+                <div class="product-card" data-category="photocard">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/Camara.jpeg" alt="Photocard Holders: Camara">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Photocard Holders: Cámara</h3>
+                        <div class="product-price">$75</div>
+                        <div class="product-actions">
+                            <a href="Productos/PhotocardCamara.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(4, 'Photocard Holder: Cámara', 'Productos/PhotocardCamara.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photocard Holder: Wanted -->
+                <div class="product-card" data-category="photocard">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/Wanted.jpeg" alt="Photocard Holders: Wanted">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Photocard Holders: Wanted</h3>
+                        <div class="product-price">$65</div>
+                        <div class="product-actions">
+                            <a href="Productos/PhotocardWanted.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(5, 'Photocard Holder: Wanted', 'Productos/PhotocardWanted.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Circus Sticker -->
+                <div class="product-card" data-category="sticker">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/Portada_DC.jpeg" alt="Digital Circus Stickers">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Digital Circus Sticker</h3>
+                        <div class="product-price">$10</div>
+                        <div class="product-actions">
+                            <a href="Productos/DigitalSticker.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(6, 'Digital Circus Sticker', 'Productos/DigitalSticker.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- One Piece Sticker -->
+                <div class="product-card" data-category="sticker">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/PortadaOP.jpeg" alt="One Piece Stickers">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Stickers One Piece</h3>
+                        <div class="product-price">$10</div>
+                        <div class="product-actions">
+                            <a href="Productos/OnePieceSticker.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(7, 'One Piece Sticker','Productos/OnePieceSticker.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SKZOO Sticker -->
+                <div class="product-card" data-category="sticker">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/PortadaSKZ.jpeg" alt="SKZ Stickers">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Stickers SKZOO Family</h3>
+                        <div class="product-price">$10</div>
+                        <div class="product-actions">
+                            <a href="Productos/SKZOOStickers.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(8, 'SKZOO Sticker', 'Productos/SKZOOStickers.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alien Stage Sticker -->
+                <div class="product-card" data-category="sticker">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/AlienStage_Portada.jpeg" alt="Alien Stage Stickers">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Stickers Alien Stage</h3>
+                        <div class="product-price">$10</div>
+                        <div class="product-actions">
+                            <a href="Productos/AlienStage.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(9, 'Alien Stage Sticker', 'Productos/AlienStage.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Llavero NFC -->
+                <div class="product-card" data-category="llavero">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/Portada_LLavero.jpeg" alt="This & That Llavero">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Llavero Stray Kids CD NFC</h3>
+                        <div class="product-price">$50</div>
+                        <div class="product-actions">
+                            <a href="Productos/LlaveroSKZNFC.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(10, 'Llavero NFC SKZ', 'Productos/LlaveroSKZNFC.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mini Poster SKZ -->
+                <div class="product-card" data-category="mini-poster">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/StrayKids.jpeg" alt="Mini poster Stray Kids">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mini Posters SKZ</h3>
+                        <div class="product-price">$15</div>
+                        <div class="product-actions">
+                            <a href="Productos/MiniSKZ.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(11, 'Mini poster SKZ', 'Productos/MiniSKZ.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mini Poster Kpop -->
+                <div class="product-card" data-category="mini-poster">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/Portada_Mini.png" alt="Portada Mini Poster">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mini Posters Kpop</h3>
+                        <div class="product-price">$15</div>
+                        <div class="product-actions">
+                            <a href="Productos/MiniPosterKpop.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(12, 'Mini poster KPOP', 'Productos/MiniPosterKpop.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mini Poster Anime -->
+                <div class="product-card" data-category="mini-poster">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/PortadaMiniAnime.png" alt="Mini poster Anime">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mini Posters Anime</h3>
+                        <div class="product-price">$15</div>
+                        <div class="product-actions">
+                            <a href="Productos/MiniPosterAnime.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(13, 'Mini poster Anime','Productos/MiniPosterAnime.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Llaveros SKZ -->
+                <div class="product-card" data-category="llavero">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/SKZLL1.jpeg" alt="Llaveros Stray Kids">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Llaveros Stray Kids</h3>
+                        <div class="product-price">$20</div>
+                        <div class="product-actions">
+                            <a href="Productos/LlaverosSKZ.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(14, 'Llavero SKZ', 'Productos/LlaverosSKZ.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Llaveros STBV -->
+                <div class="product-card" data-category="llavero">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/SB.jpeg" alt="Llaveros de Santos Bravos">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Llaveros Santos Bravos</h3>
+                        <div class="product-price">$60</div>
+                        <div class="product-actions">
+                            <a href="Productos/LlaveroSB.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCart(15, 'Llavero STBV', 60, 'SB.jpeg')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Llaveros Sanrio -->
+                <div class="product-card" data-category="llavero">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/SanrioLL.jpeg" alt="Llaveros Sanrio">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Llaveros Sanrio</h3>
+                        <div class="product-price">$60</div>
+                        <div class="product-actions">
+                            <a href="Productos/LlaveroSanrio.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCart(16, 'Llavero Sanrio', 60, 'SanrioLL.jpeg')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Llaveros Atarashi -->
+                <div class="product-card" data-category="llavero">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/Atarashi.jpeg" alt="Llaveros Atarashi">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Llaveros Atarashi Gacko</h3>
+                        <div class="product-price">$60</div>
+                        <div class="product-actions">
+                            <a href="Productos/LlaveroAtarashi.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCart(17, 'Llavero AG', 60, 'Atarashi.jpeg')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Llaveros Acrilico -->
+                <div class="product-card" data-category="llavero">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/PortadaLL.png" alt="Llaveros para compartir">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Llaveros para compartir</h3>
+                        <div class="product-price">$30</div>
+                        <div class="product-actions">
+                            <a href="Productos/LlaverosAnime.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(18, 'Llavero Acrílicos', 'Productos/LlaverosAnime.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones One Piece -->
+                <div class="product-card" data-category="pines">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/PortadaBotonOP.jpeg" alt="Portada Botones One Piece">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Botones One Piece</h3>
+                        <div class="product-price">$15</div>
+                        <div class="product-actions">
+                            <a href="Productos/BotonesOP.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(19, 'Boton OP', 'Productos/BotonesOP.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones SKZOO -->
+                <div class="product-card" data-category="pines">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/PortadaBotonSKZ.jpeg" alt="Portada Botones SKZOO">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Botones SKZOO Family</h3>
+                        <div class="product-price">$15</div>
+                        <div class="product-actions">
+                            <a href="Productos/BotonesSKZOO.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(20, 'Boton SKZ', 'Productos/BotonesSKZOO.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pines Anime -->
+                <div class="product-card" data-category="pines">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/Portada_PinA.png" alt="Portada Pines">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Pines Anime</h3>
+                        <div class="product-price">$60 -$80</div>
+                        <div class="product-actions">
+                            <a href="Productos/PinesAnime.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(21, 'Pines Anime', 'Productos/PinesAnime.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Telemachus -->
+                <div class="product-card" data-category="pines">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/Telemachus.jpeg" alt="Portada Pines">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Boton y sticker Telemachus</h3>
+                        <div class="product-price">$10 -$15</div>
+                        <div class="product-actions">
+                            <a href="Productos/Telemachus.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(22, 'Boton Telemachus', 'Productos/Telemachus.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shojo Stickers -->
+                <div class="product-card" data-category="stickers">
+                    <div class="product-image">
+                        <img src="Productos/Img productos/PortadaShojo.jpeg" alt="Portada Pines">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sticker Shojo</h3>
+                        <div class="product-price">$10</div>
+                        <div class="product-actions">
+                            <a href="Productos/ShojoStickers.html" class="more-info" target="_self">
+                                <i class="fa-solid fa-circle-plus"></i> Ver Producto
+                            </a>
+                            <button class="add-to-cart" onclick="addToCartWithVariants(23, 'Shojo Stickers', 'Productos/ShojoStickers.html')">
+                                <i class="fas fa-cart-plus"></i> Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- Fin products-grid -->
+        </div> <!-- Fin container -->
+    </div> <!-- Fin productos -->
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Waffle Shop</h3>
+                    <p style="opacity:0.7;">La tiendita con todos tus personajes y idols favoritos.</p>
+                </div>
+                <div>
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#bienvenido">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="PuntosEntrega.html">Puntos de entrega</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Sígueme para más novedades:</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/wafflearte.030"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@wafflearte.030"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Waffle Shop. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="carrito.js"></script>
+    <script>
+        // ========== FILTROS DE PRODUCTOS ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            function filterProducts(category) {
+                productCards.forEach(card => {
+                    const cardCategory = card.dataset.category;
+                    if (category === 'todos' || cardCategory === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const categoryText = this.textContent.trim().toLowerCase();
+                    let category = 'todos';
+                    
+                    if (categoryText === 'photocard holder') category = 'photocard';
+                    else if (categoryText === 'mini-poster') category = 'mini-poster';
+                    else if (categoryText === 'stickers') category = 'sticker';
+                    else if (categoryText === 'llaveros') category = 'llavero';
+                    else if (categoryText === 'pines') category = 'pines';
+                    
+                    filterProducts(category);
+                });
+            });
+
+            console.log('✅ Filtros inicializados');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKZOO Stickers - Waffle Shop</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Yuyu&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="Productos.css">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="../Shop.html" class="logo">Waffle<span>Shop</span></a>
+                <ul class="nav-links">
+                    <li><a href="../Shop.html#bienvenido">¡Bienvenido!</a></li>
+                    <li><a href="../Shop.html#productos">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="../Carrito.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="container">
+            <h1>✨ SKZOO Family Stickers</h1>
+            <p>Decora tus objetos con las stickers de la familia SKZOO</p>
+            <a href="../Shop.html#productos" class="btn">Ver más productos</a>
+        </div>
+    </section>
+
+    <!-- ========== PÁGINA DEL PRODUCTO ========== -->
+    <div class="container">
+        <div class="product-page">
+
+            <!-- ===== GALERÍA DE IMÁGENES ===== -->
+            <div class="gallery">
+                <div class="main-image">
+                    <img src="Img productos/PortadaSKZ.jpeg" alt="SKZOO Sticker" id="mainImage">
+                </div>
+                <div class="thumbnail-grid">
+                    <img src="Img productos/PortadaSKZ.jpeg" alt="Portada" onclick="changeImage(this)">
+                    <img src="Img productos/EjemploSKZ.jpeg" alt="EjemploSticker" onclick="changeImage(this)">
+                    <img src="Img productos/JiniQuo.jpeg" alt="Jiniret & Quokka" onclick="changeImage(this)">
+                    <img src="Img productos/WolfChan.jpeg" alt="WolfChan" onclick="changeImage(this)">
+                    <img src="Img productos/Dawaeki.jpeg" alt="Dawaeki" onclick="changeImage(this)">
+                    <img src="Img productos/LeePuppy.jpeg" alt="PuppyM & Leebit" onclick="changeImage(this)">
+                    <img src="Img productos/Bbokari.jpeg" alt="Bbokari" onclick="changeImage(this)">
+                    <img src="Img productos/Foxy.jpeg" alt="Foxy" onclick="changeImage(this)">
+                </div>
+            </div>
+
+            <!-- ===== INFORMACIÓN DEL PRODUCTO ===== -->
+            <div class="product-details">
+                <h1 class="product-title">SKZOO Sticker</h1>
+                
+                <div class="product-price">$10 (una unidad)</div>
+
+                <div class="product-description">
+                    <p>Decora con las stickers de la familia SKZOO.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Adhesivo precortado</li>
+                        <li><i class="fas fa-check-circle"></i> Diseño exclusivo</li>
+                        <li><i class="fas fa-check-circle"></i> Perfecto para decorar</li>
+                        <li><i class="fas fa-check-circle"></i> Divertido drama familiar</li>
+                    </ul>
+                </div>
+
+                <!-- ===== SELECTOR DE COLORES ===== -->
+                <div class="color-selector">
+                    <p class="color-label">🎨 Selecciona un personaje: <span class="color-required">*Obligatorio</span></p>
+                    <div class="color-options" id="colorOptions"></div>
+                    <p class="color-selected" id="colorSelected">Personaje seleccionado: <span>Ninguno</span></p>
+                    <p class="color-error" id="colorError" style="display: none;">
+                        ⚠️ Por favor, selecciona un personaje antes de añadir al carrito.
+                    </p>
+                </div>
+
+                <div class="product-actions">
+                    <button class="btn-action btn-add-cart" onclick="addToCartWithColor()">
+                        <i class="fas fa-cart-plus"></i> Añadir al carrito
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Waffle Shop</h3>
+                    <p style="opacity:0.7;">La tiendita con todos tus personajes y idols favoritos.</p>
+                </div>
+                <div>
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="../Shop.html#bienvenido">Inicio</a></li>
+                        <li><a href="../Shop.html#productos">Productos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="#">Puntos de entrega</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Sígueme para más novedades:</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/wafflearte.030"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@wafflearte.030"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Waffle Shop. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    
+    <!-- ✅ PASO 1: DEFINIR LOS COLORES PERSONALIZADOS PRIMERO -->
+    <script>
+        // Colores para Digital Circus (personajes)
+        const CUSTOM_COLORS = [
+            { name: 'Jiniret + Quokka', hex: '#955AE8', priceExtra:0 },
+            { name: 'Wolf Chan', hex: '#1D39B8', priceExtra:0},
+            { name: 'Bbokari', hex: '#FAF891', priceExtra:0 },
+            { name: 'Dwaekki', hex: '#BD289C', priceExtra:0 },
+            { name: 'FoxiNy', hex: '#AFE681' , priceExtra:0},
+            { name: 'PuppyM + Leebit', hex: '#E85AC1', priceExtra:0 },
+            { name: 'Familia JinQuoka', hex: '#E1CCFF', priceExtra:15 },
+            { name: 'Familia PuppyLee', hex: '#CCFFEF', priceExtra:15 },
+            { name: 'Familia SKZOO', hex: '#ED6885', priceExtra:35 },
+        ];
+        
+        console.log('🎨 Colores de Digital Circus cargados:', CUSTOM_COLORS);
+    </script>
+
+    <!-- ✅ PASO 2: CARGAR LOS SCRIPTS -->
+    <script src="../carrito.js"></script>
+    <script>
+        function renderCart() {
+            const cart = getCart(); // ← Usa la función de carrito.js
+        }
+    </script>
+    <script src="color-selector.js"></script>
+
+    <script>
+    // Configurar el producto con su ID, nombre, precio e imagen
+    setProductConfig(8, 'SKZOO Sticker', 10, 'PortadaSKZ.jpeg');
+    enableColorPrices(CUSTOM_COLORS);
+    </script>
+
+    <!-- ========== JAVASCRIPT PARA CAMBIAR IMAGEN ========== -->
+    <script>
+        function changeImage(element) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = element.src;
+            
+            const thumbnails = document.querySelectorAll('.thumbnail-grid img');
+            thumbnails.forEach(img => img.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstThumb = document.querySelector('.thumbnail-grid img');
+            if (firstThumb) {
+                firstThumb.classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>

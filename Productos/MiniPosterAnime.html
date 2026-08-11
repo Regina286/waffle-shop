@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Poster Anime - Waffle Shop</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Yuyu&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="Productos.css">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="../Shop.html" class="logo">Waffle<span>Shop</span></a>
+                <ul class="nav-links">
+                    <li><a href="../Shop.html#bienvenido">¡Bienvenido!</a></li>
+                    <li><a href="../Shop.html#productos">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="../Carrito.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="container">
+            <h1>✨ Mini Posters de anime</h1>
+            <p>Decora con mini posters de tus series favoritas</p>
+            <a href="../Shop.html#productos" class="btn">Ver más productos</a>
+        </div>
+    </section>
+
+    <!-- ========== PÁGINA DEL PRODUCTO ========== -->
+    <div class="container">
+        <div class="product-page">
+
+            <!-- ===== GALERÍA DE IMÁGENES ===== -->
+            <div class="gallery">
+                <div class="main-image">
+                    <img src="Img productos/PortadaMiniAnime.png" alt="Mini Poster anime" id="mainImage">
+                </div>
+                <div class="thumbnail-grid">
+                    <img src="Img productos/PortadaMiniAnime.png" alt="Portada" onclick="changeImage(this)">
+                    <img src="Img productos/SBR1.png" alt="SBR" onclick="changeImage(this)">
+                    <img src="Img productos/SBR2.png" alt="SBR" onclick="changeImage(this)">
+                    <img src="Img productos/Cowboy1.png" alt="Cowboy Bepop" onclick="changeImage(this)">
+                    <img src="Img productos/Cowboy2.png" alt="Cowboy Bepop" onclick="changeImage(this)">
+                    <img src="Img productos/Frieren.jpeg" alt="Frieren" onclick="changeImage(this)">
+                    <img src="Img productos/AOT1.png" alt="AOT" onclick="changeImage(this)">
+                    <img src="Img productos/AOT2.png" alt="AOT" onclick="changeImage(this)">
+                    <img src="Img productos/CSM1.png" alt="CSM" onclick="changeImage(this)">
+                    <img src="Img productos/CSM2.png" alt="CSM" onclick="changeImage(this)">
+                    <img src="Img productos/KNY1.png" alt="KNY" onclick="changeImage(this)">
+                    <img src="Img productos/KNY2.jpeg" alt="KNY" onclick="changeImage(this)">
+                    <img src="Img productos/Nika.jpeg" alt="Luffy Nika" onclick="changeImage(this)">
+                    <img src="Img productos/BrookPoster.jpeg" alt="Brook" onclick="changeImage(this)">
+                    <img src="Img productos/YAIAPO.jpeg" alt="You and I are Polar Opposites" onclick="changeImage(this)">
+                    <img src="Img productos/DigitalCircus.jpeg" alt="Digital Circus" onclick="changeImage(this)">
+                    <img src="Img productos/AHW.jpeg" alt="Atelier hat witch" onclick="changeImage(this)">
+                    <img src="Img productos/Nezuko.jpeg" alt="Nezuko" onclick="changeImage(this)">
+                    <img src="Img productos/Haikyuu.jpeg" alt="Haikyuu" onclick="changeImage(this)">
+                    <img src="Img productos/DrStone.jpeg" alt="Dr Stone" onclick="changeImage(this)">
+                    <img src="Img productos/JJK.jpeg" alt="JJK" onclick="changeImage(this)">
+                </div>
+            </div>
+
+            <!-- ===== INFORMACIÓN DEL PRODUCTO ===== -->
+            <div class="product-details">
+                <h1 class="product-title">Mini Poster Anime</h1>
+                
+                <div class="product-price">$15</div>
+
+                <div class="product-description">
+                    <p>Decora posters de tus personajes favoritos.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Mini póster</li>
+                        <li><i class="fas fa-check-circle"></i> Meterial adhesivo o postal. Revise el material seleccionado al comprar</li>
+                        <li><i class="fas fa-check-circle"></i> Perfecto para decorar</li>
+                    </ul>
+                </div>
+
+                <!-- ===== SELECTOR DE COLORES ===== -->
+                <div class="color-selector">
+                    <p class="color-label">🎨 Selecciona un idol: <span class="color-required">*Obligatorio</span></p>
+                    <div class="color-options" id="colorOptions"></div>
+                    <p class="color-selected" id="colorSelected">Idol seleccionado: <span>Ninguno</span></p>
+                    <p class="color-error" id="colorError" style="display: none;">
+                        ⚠️ Por favor, selecciona un idol antes de añadir al carrito.
+                    </p>
+                </div>
+
+                <div class="product-actions">
+                    <button class="btn-action btn-add-cart" onclick="addToCartWithColor()">
+                        <i class="fas fa-cart-plus"></i> Añadir al carrito
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Waffle Shop</h3>
+                    <p style="opacity:0.7;">La tiendita con todos tus personajes y idols favoritos.</p>
+                </div>
+                <div>
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="../Shop.html#bienvenido">Inicio</a></li>
+                        <li><a href="../Shop.html#productos">Productos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="#">Puntos de entrega</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Sígueme para más novedades:</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/wafflearte.030"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@wafflearte.030"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Waffle Shop. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    
+    <!-- ✅ PASO 1: DEFINIR LOS COLORES PERSONALIZADOS PRIMERO -->
+    <script>
+        // Colores para Digital Circus (personajes)
+        const CUSTOM_COLORS = [
+            { name: 'Steel Ball Run 1', hex: '#e74c3c', priceExtra:0 },
+            { name: 'Steel Ball Run 2', hex: '#9b59b6', priceExtra:0},
+            { name: 'Steel Ball Run 1 (Adhesivo)', hex: '#e74c3c', priceExtra:0 },
+            { name: 'Steel Ball Run 2 (Adhesivo)', hex: '#9b59b6', priceExtra:0},
+            { name: 'Cowboy Bepop 1', hex: '#f39c12', priceExtra:0 },
+            { name: 'Cowboy Bepop 2', hex: '#e91e63', priceExtra:0 },
+            { name: 'Cowboy Bepop 1 (Adhesivo)', hex: '#f39c12', priceExtra:0 },
+            { name: 'Cowboy Bepop 2 (Adhesivo)', hex: '#e91e63', priceExtra:0 },
+            { name: 'Frieren', hex: '#14750D' , priceExtra:0},
+            { name: 'Frieren (Adhesivo)', hex: '#14750D' , priceExtra:0},
+            { name: 'AOT 1', hex: '#FFA8E5', priceExtra:0 },
+            { name: 'AOT 2', hex: '#0D756E', priceExtra:0 },
+            { name: 'AOT 2 (Adhesivo)', hex: '#0D756E', priceExtra:0 },
+            { name: 'Chainsawman 1', hex: '#6E0D75', priceExtra:0 },
+            { name: 'Chainsawman 2', hex: '#750D14', priceExtra:0 },
+            { name: 'Chainsawman 2 (Adhesivo)', hex: '#750D14', priceExtra:0 },
+            { name: 'Kimetsu no Yaiba 1', hex: '#CED418', priceExtra:0 },
+            { name: 'Kimetsu no Yaiba 2', hex: '#18CED4', priceExtra:0 },
+            { name: 'Kimetsu no Yaiba 1 (Adhesivo)', hex: '#CED418', priceExtra:0 },
+            { name: 'Kimetsu no Yaiba 2 (Adhesivo)', hex: '#18CED4', priceExtra:0 },
+            { name: 'Luffy', hex: '#1E18D4', priceExtra:0 },
+            { name: 'Luffy (Adhesivo)', hex: '#1E18D4', priceExtra:0 },
+            { name: 'Brook', hex: '#CA48D8', priceExtra:0 },
+            { name: 'Brook (Adhesivo)', hex: '#CA48D8', priceExtra:0 },
+            { name: 'You and I are polar opposites', hex: '#D8489F', priceExtra:0 },
+            { name: 'You and I are polar opposites (Adhesivo)', hex: '#D8489F', priceExtra:0 },
+            { name: 'Digital Circus', hex: '#D84856', priceExtra:0 },
+            { name: 'Digital Circus (Adhesivo)', hex: '#D84856', priceExtra:0 },
+            { name: 'Hat Witch Atelier', hex: '#5847A9', priceExtra:0 },
+            { name: 'Nezuko (Adhesivo)', hex: '#A95747', priceExtra:0 },
+            { name: 'Haikyuu', hex: '#47A2A9', priceExtra:0 },
+            { name: 'Dr Stone', hex: '#E65AE2', priceExtra:0 },
+            { name: 'Jujutsu no kaisen', hex: '#E65AE2', priceExtra:0 },
+        ];
+        
+        console.log('🎨 Colores de Digital Circus cargados:', CUSTOM_COLORS);
+    </script>
+
+    <!-- ✅ PASO 2: CARGAR LOS SCRIPTS -->
+    <script src="../carrito.js"></script>
+    <script>
+    function renderCart() {
+        const cart = getCart(); // ← Usa la función de carrito.js
+    }
+</script>
+    <script src="color-selector.js"></script>
+
+    <script>
+    // Configurar el producto con su ID, nombre, precio e imagen
+    setProductConfig(13, 'Mini poster Anime', 15, 'Portada_DC.jpeg');
+    enableColorPrices(CUSTOM_COLORS);
+    </script>
+
+    <!-- ========== JAVASCRIPT PARA CAMBIAR IMAGEN ========== -->
+    <script>
+        function changeImage(element) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = element.src;
+            
+            const thumbnails = document.querySelectorAll('.thumbnail-grid img');
+            thumbnails.forEach(img => img.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstThumb = document.querySelector('.thumbnail-grid img');
+            if (firstThumb) {
+                firstThumb.classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>

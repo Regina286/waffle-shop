@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llaveros Anime - Waffle Shop</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Yuyu&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="Productos.css">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="../Shop.html" class="logo">Waffle<span>Shop</span></a>
+                <ul class="nav-links">
+                    <li><a href="../Shop.html#bienvenido">¡Bienvenido!</a></li>
+                    <li><a href="../Shop.html#productos">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="../Carrito.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="container">
+            <h1>✨ Llaveros para compartir</h1>
+            <p>Decora tus objetos con tus personajes favoritos</p>
+            <a href="../Shop.html#productos" class="btn">Ver más productos</a>
+        </div>
+    </section>
+
+    <!-- ========== PÁGINA DEL PRODUCTO ========== -->
+    <div class="container">
+        <div class="product-page">
+
+            <!-- ===== GALERÍA DE IMÁGENES ===== -->
+            <div class="gallery">
+                <div class="main-image">
+                    <img src="Img productos/PortadaLL.png" alt="Alien Stage Sticker" id="mainImage">
+                </div>
+                <div class="thumbnail-grid">
+                    <img src="Img productos/PortadaLL.png" alt="Portada" onclick="changeImage(this)">
+                    <img src="Img productos/19days.jpeg" alt="19days" onclick="changeImage(this)">
+                    <img src="Img productos/Tamen.jpeg" alt="Tamen" onclick="changeImage(this)">
+                    <img src="Img productos/Tamen2.jpeg" alt="Tamen" onclick="changeImage(this)">
+                    <img src="Img productos/AS.jpeg" alt="AlienStage" onclick="changeImage(this)">
+                    <img src="Img productos/AS2.jpeg" alt="AlienStage" onclick="changeImage(this)">
+                    <img src="Img productos/CSMLLavero.jpeg" alt="CSM" onclick="changeImage(this)">
+                    <img src="Img productos/Jackson.jpeg" alt="Jackson Wang" onclick="changeImage(this)">
+                    <img src="Img productos/JW.jpeg" alt="JAckson Wang" onclick="changeImage(this)">
+                    <img src="Img productos/JM.jpeg" alt="Jinshi Mao" onclick="changeImage(this)">
+                    <img src="Img productos/JM2.jpeg" alt="Jinshi Mao" onclick="changeImage(this)">
+                    <img src="Img productos/KNY.jpeg" alt="Kimetsu" onclick="changeImage(this)">                    
+                    <img src="Img productos/KNY2.jpeg" alt="Kimetsu" onclick="changeImage(this)">
+                    <img src="Img productos/STL.jpeg" alt="Skip to loafer" onclick="changeImage(this)">
+                    <img src="Img productos/TetoNeru.jpeg" alt="Vocaloid" onclick="changeImage(this)">
+                    <img src="Img productos/TetoNeru (2).jpeg" alt="Vocaloid" onclick="changeImage(this)">
+                    <img src="Img productos/TGCF2.jpeg" alt="TGCF" onclick="changeImage(this)">
+                    <img src="Img productos/TGCF.jpeg" alt="TGCF" onclick="changeImage(this)">
+                    <img src="Img productos/ZoSan.jpeg" alt="Zoro Sanji" onclick="changeImage(this)">
+                    <img src="Img productos/ZoSan2.jpeg" alt="Zoro Sanji" onclick="changeImage(this)">
+                </div>
+            </div>
+
+            <!-- ===== INFORMACIÓN DEL PRODUCTO ===== -->
+            <div class="product-details">
+                <h1 class="product-title">Llaveros para compartir</h1>
+                
+                <div class="product-price">$30 - $45</div>
+
+                <div class="product-description">
+                    <p>Decora y comparte llaveros con tus amigos.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Llaveros para compartir</li>
+                        <li><i class="fas fa-check-circle"></i> Doble vista</li>
+                        <li><i class="fas fa-check-circle"></i> Decorados con stickers</li>
+                    </ul>
+                </div>
+
+                <!-- ===== SELECTOR DE COLORES ===== -->
+                <div class="color-selector">
+                    <p class="color-label">🎨 Selecciona un personaje: <span class="color-required">*Obligatorio</span></p>
+                    <div class="color-options" id="colorOptions"></div>
+                    <p class="color-selected" id="colorSelected">Personaje seleccionado: <span>Ninguno</span></p>
+                    <p class="color-error" id="colorError" style="display: none;">
+                        ⚠️ Por favor, selecciona un personaje antes de añadir al carrito.
+                    </p>
+                </div>
+
+                <div class="product-actions">
+                    <button class="btn-action btn-add-cart" onclick="addToCartWithColor()">
+                        <i class="fas fa-cart-plus"></i> Añadir al carrito
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Waffle Shop</h3>
+                    <p style="opacity:0.7;">La tiendita con todos tus personajes y idols favoritos.</p>
+                </div>
+                <div>
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="../Shop.html#bienvenido">Inicio</a></li>
+                        <li><a href="../Shop.html#productos">Productos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Información</h3>
+                    <ul>
+                        <li><a href="#">Puntos de entrega</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Sígueme para más novedades:</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/wafflearte.030"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@wafflearte.030"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Waffle Shop. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    
+    <!-- ✅ PASO 1: DEFINIR LOS COLORES PERSONALIZADOS PRIMERO -->
+    <script>
+        // Colores para Digital Circus (personajes)
+        const CUSTOM_COLORS = [
+            { name: 'Alien Stage', hex: '#FFA8E5', priceExtra:15 },
+            { name: 'ZoSan', hex: '#C1F062', priceExtra:0},
+            { name: 'HuaLian', hex: '#D4316C', priceExtra:0 },
+            { name: 'Jinshi Maomao', hex: '#8831D4', priceExtra:0 },
+            { name: 'Chainsaw', hex: '#F2B95C' , priceExtra:0},
+            { name: 'Teto Neru', hex: '#F2DB5C', priceExtra:0 },
+            { name: 'Skip to Loafer', hex: '#FFB3EF', priceExtra:0 },
+            { name: 'Tamen di gushi', hex: '#F9FFB3', priceExtra:0 },
+            { name: '19 days', hex: '#FFD9B3', priceExtra:0 },
+        ];
+        
+        console.log('🎨 Colores de Digital Circus cargados:', CUSTOM_COLORS);
+    </script>
+
+    <!-- ✅ PASO 2: CARGAR LOS SCRIPTS -->
+    <script src="../carrito.js"></script>
+        <script>
+        function renderCart() {
+            const cart = getCart(); // ← Usa la función de carrito.js
+        }
+    </script>
+    <script src="color-selector.js"></script>
+
+    <script>
+    // Configurar el producto con su ID, nombre, precio e imagen
+    setProductConfig(18, 'Llaveros Anime', 30, 'PortadaLL.jpeg');
+    enableColorPrices(CUSTOM_COLORS);
+    </script>
+
+    <!-- ========== JAVASCRIPT PARA CAMBIAR IMAGEN ========== -->
+    <script>
+        function changeImage(element) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = element.src;
+            
+            const thumbnails = document.querySelectorAll('.thumbnail-grid img');
+            thumbnails.forEach(img => img.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstThumb = document.querySelector('.thumbnail-grid img');
+            if (firstThumb) {
+                firstThumb.classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
