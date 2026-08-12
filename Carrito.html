@@ -36,44 +36,43 @@
         <h1>🛒 Mi Carrito</h1>
         
         <!-- ===== SELECCIONAR PUNTO DE ENTREGA ===== -->
-        <div class="delivery-section">
-            <h2><i class="fas fa-store"></i> Selecciona tu punto de entrega</h2>
-            <p class="delivery-subtitle">Elige la ubicación donde recogerás tu pedido</p>
-            
-            <div class="delivery-options" id="deliveryOptions">
-                <!-- Los puntos se cargan desde JavaScript -->
-            </div>
+            <div class="delivery-section">
+                <h2><i class="fas fa-store"></i> Selecciona tu punto de entrega</h2>
+                <p class="delivery-subtitle">Elige la ubicación donde recogerás tu pedido</p>
+                
+                <div class="delivery-options" id="deliveryOptions">
+                    <!-- Los puntos se cargan desde JavaScript -->
+                </div>
 
-            <!-- Selector de día -->
-            <div class="day-section" id="daySection" style="display: none;">
-                <h3><i class="fas fa-calendar-day"></i> Selecciona un día</h3>
-                <div class="day-options" id="dayOptions">
-                    <!-- Se llena con JavaScript -->
+                <!-- Selector de día -->
+                <div class="day-section" id="daySection" style="display: none;">
+                    <h3><i class="fas fa-calendar-day"></i> Selecciona un día</h3>
+                    <div class="day-options" id="dayOptions">
+                        <!-- Se llena con JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Selector de horario -->
+                <div class="schedule-section" id="scheduleSection" style="display: none;">
+                    <h3><i class="far fa-clock"></i> Selecciona un horario</h3>
+                    <div class="schedule-options" id="scheduleOptions">
+                        <!-- Se llena con JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Resumen de la selección -->
+                <div class="delivery-summary" id="deliverySummary" style="display: none;">
+                    <p><i class="fas fa-check-circle" style="color: #2ecc71;"></i> 
+                        <strong>Punto seleccionado:</strong> <span id="selectedPoint"></span>
+                    </p>
+                    <p><i class="fas fa-check-circle" style="color: #2ecc71;"></i> 
+                        <strong>Día:</strong> <span id="selectedDay"></span>
+                    </p>
+                    <p><i class="fas fa-check-circle" style="color: #2ecc71;"></i> 
+                        <strong>Horario:</strong> <span id="selectedSchedule"></span>
+                    </p>
                 </div>
             </div>
-
-            <!-- Selector de horario -->
-            <div class="schedule-section" id="scheduleSection" style="display: none;">
-                <h3><i class="far fa-clock"></i> Selecciona un horario</h3>
-                <div class="schedule-options" id="scheduleOptions">
-                    <!-- Se llena con JavaScript -->
-                </div>
-            </div>
-
-
-            <!-- Resumen de la selección -->
-            <div class="delivery-summary" id="deliverySummary" style="display: none;">
-                <p><i class="fas fa-check-circle" style="color: #2ecc71;"></i> 
-                    <strong>Punto seleccionado:</strong> <span id="selectedPoint"></span>
-                </p>
-                <p><i class="fas fa-check-circle" style="color: #2ecc71;"></i> 
-                    <strong>Día:</strong> <span id="selectedDay"></span>
-                </p>
-                <p><i class="fas fa-check-circle" style="color: #2ecc71;"></i> 
-                    <strong>Horario:</strong> <span id="selectedSchedule"></span>
-                </p>
-            </div>
-        </div>
         
         <!-- Contenedor donde se renderizarán los items -->
         <div id="cart-items-container"></div>
