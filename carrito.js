@@ -195,7 +195,7 @@ function getNextDays(count = 14) {
     const days = [];
     const today = new Date();
     
-    for (let i = 0; i < count; i++) {
+    for (let i = 1; i < count; i++) {
         const date = new Date(today);
         date.setDate(today.getDate() + i);
         
