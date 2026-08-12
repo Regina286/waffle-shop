@@ -31,11 +31,11 @@
     </header>
 
     <!-- ========== CARRITO ========== -->
-<div class="container">
-    <div class="cart-page">
-        <h1>🛒 Mi Carrito</h1>
-        
-        <!-- ===== SELECCIONAR PUNTO DE ENTREGA ===== -->
+    <div class="container">
+        <div class="cart-page">
+            <h1>🛒 Mi Carrito</h1>
+            
+            <!-- ===== SELECCIONAR PUNTO DE ENTREGA ===== -->
             <div class="delivery-section">
                 <h2><i class="fas fa-store"></i> Selecciona tu punto de entrega</h2>
                 <p class="delivery-subtitle">Elige la ubicación donde recogerás tu pedido</p>
@@ -73,46 +73,45 @@
                     </p>
                 </div>
             </div>
-        
-        <!-- Contenedor donde se renderizarán los items -->
-        <div id="cart-items-container"></div>
-        
-       <!-- Resumen del carrito -->
-        <div id="cart-summary" style="display: none;"></div>
-
-        <!-- ===== AVISOS IMPORTANTES ===== -->
-        <div id="important" class="important-notices">
-            <div class="notice-card notice-warning">
-                <div class="notice-icon">
-                    <i class="fas fa-exclamation-circle"></i>
-                </div>
-                <div class="notice-content">
-                    <p>
-                        <strong>📸 Photocard Holder con photocard:</strong>
-                        Si seleccionaste esta opción, por favor indícanos el 
-                        <strong>grupo, idol y personaje</strong> que deseas en el mensaje de WhatsApp.
-                    </p>
-                </div>
-            </div>
             
-            <div class="notice-card notice-info">
-                <div class="notice-icon">
-                    <i class="fas fa-clock"></i>
+            <!-- Contenedor donde se renderizarán los items -->
+            <div id="cart-items-container"></div>
+            
+            <!-- Resumen del carrito -->
+            <div id="cart-summary" style="display: none;"></div>
+
+            <!-- ===== AVISOS IMPORTANTES ===== -->
+            <div id="important" class="important-notices">
+                <div class="notice-card notice-warning">
+                    <div class="notice-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="notice-content">
+                        <p>
+                            <strong>📸 Photocard Holder con photocard:</strong>
+                            Si seleccionaste esta opción, por favor indícanos el 
+                            <strong>grupo, idol y personaje</strong> que deseas en el mensaje de WhatsApp.
+                        </p>
+                    </div>
                 </div>
-                <div class="notice-content">
-                    <p>
-                        <strong>⏰ Disponibilidad:</strong>
-                        El día y hora de entrega pueden cambiar según disponibilidad. 
-                        Te confirmaré por mensaje.
-                    </p>
+                
+                <div class="notice-card notice-info">
+                    <div class="notice-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="notice-content">
+                        <p>
+                            <strong>⏰ Disponibilidad:</strong>
+                            El día y hora de entrega pueden cambiar según disponibilidad. 
+                            Te confirmaré por mensaje.
+                        </p>
+                    </div>
                 </div>
             </div>
+
         </div>
-
     </div>
-</div>
 
-   
     <!-- ========== FOOTER ========== -->
     <footer>
         <div class="container">
@@ -149,7 +148,6 @@
     </footer>
 
     <!-- ========== SCRIPTS ========== -->
-    <!-- ✅ Cargar el carrito desde el archivo externo -->
     <script src="carrito.js"></script>
 
     <script>
@@ -175,10 +173,8 @@
                 return;
             }
 
-            // Renderizar items
             let itemsHTML = '';
             cart.forEach(item => {
-                // Usar uniqueId como identificador
                 const uniqueId = item.uniqueId || item.name;
                 const safeId = uniqueId.replace(/'/g, "\\'").replace(/"/g, '&quot;');
                 
@@ -207,7 +203,6 @@
 
             container.innerHTML = itemsHTML;
 
-            // Renderizar resumen
             const total = getCartTotal();
             const count = getCartCount();
             summaryContainer.style.display = 'block';
@@ -230,8 +225,6 @@
                 </div>
             `;
         }
-
-        // ========== FUNCIONES GLOBALES ==========
 
         function removeItem(uniqueId) {
             console.log('🗑️ Eliminando item:', uniqueId);
@@ -265,6 +258,189 @@
             showNotification('🛒 Carrito vaciado');
         }
 
+        // ========== RESPALDO: Puntos de entrega ==========
+        function renderDeliveryOptionsRespaldo() {
+            console.log('🔄 renderDeliveryOptionsRespaldo ejecutado');
+            
+            const container = document.getElementById('deliveryOptions');
+            if (!container) {
+                console.error('❌ Contenedor deliveryOptions no encontrado');
+                return;
+            }
+
+            // ✅ DEFINIR PUNTOS DE ENTREGA AQUÍ MISMO
+            const puntos = [
+                {
+                    id: 1,
+                    nombre: "Aurrera Peñaflor",
+                    direccion: "Blvd Quintana Arrioja 4201, Ciudad del Sol, 76116 Santiago de Querétaro, Qro.",
+                    horarios: ["11:30 AM", "12:00 PM", "12:30 PM", "5:00 PM", "5:30 PM", "6:00 PM"],
+                    diasDisponibles: [1, 3, 5]
+                },
+                {
+                    id: 2,
+                    nombre: "Aurrera Satélite",
+                    direccion: "Av. de la Luz 401, Santa Ana, Cosmos, 76110 Santiago de Querétaro, Qro.",
+                    horarios: ["11:30 AM", "12:00 PM", "12:30 PM"],
+                    diasDisponibles: [1, 3, 5]
+                },
+                {
+                    id: 3,
+                    nombre: "Sendero",
+                    direccion: "Av. Sur #789, Querétaro",
+                    horarios: ["11:30 AM", "12:00 PM", "12:30 PM"],
+                    diasDisponibles: [1, 3, 5]
+                },
+                {
+                    id: 4,
+                    nombre: "La Comer Juriquilla",
+                    direccion: "Blvd. Universitario 405, 76230 Juriquilla, Qro.",
+                    horarios: ["10:00 AM", "10:30 AM", "11:30 AM", "12:00 PM", "12:30 PM", "5:00 PM", "5:30 PM"],
+                    diasDisponibles: [2, 4]
+                },
+                {
+                    id: 5,
+                    nombre: "Plaza de las Américas",
+                    direccion: "Av. Constituyentes Ote. 183, Plaza de las Americas, 76050 Santiago de Querétaro, Qro.",
+                    horarios: ["11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM"],
+                    diasDisponibles: [6]
+                }
+            ];
+
+            console.log('📍 Puntos definidos en respaldo:', puntos.length);
+
+            let html = '';
+            puntos.forEach((punto) => {
+                html += `
+                    <button class="delivery-btn" data-id="${punto.id}" onclick="selectPointRespaldo(${punto.id})">
+                        <span class="btn-icon"><i class="fas fa-store"></i></span>
+                        <span class="btn-info">
+                            <span class="name">${punto.nombre}</span>
+                            <span class="address">${punto.direccion}</span>
+                        </span>
+                        <span class="btn-check"><i class="fas fa-check-circle"></i></span>
+                    </button>
+                `;
+            });
+
+            container.innerHTML = html;
+            console.log('✅ Puntos de entrega renderizados (respaldo):', puntos.length);
+        }
+
+        // ========== FUNCIONES DE RESPALDO ==========
+        function selectPointRespaldo(pointId) {
+            console.log('📍 Punto seleccionado (respaldo):', pointId);
+            
+            const puntos = [
+                { id: 1, nombre: "Aurrera Peñaflor", direccion: "Blvd Quintana Arrioja 4201", horarios: ["11:30 AM", "12:00 PM", "12:30 PM", "5:00 PM", "5:30 PM", "6:00 PM"], diasDisponibles: [1,3,5] },
+                { id: 2, nombre: "Aurrera Satélite", direccion: "Av. de la Luz 401", horarios: ["11:30 AM", "12:00 PM", "12:30 PM"], diasDisponibles: [1,3,5] },
+                { id: 3, nombre: "Sendero", direccion: "Av. Sur #789", horarios: ["11:30 AM", "12:00 PM", "12:30 PM"], diasDisponibles: [1,3,5] },
+                { id: 4, nombre: "La Comer Juriquilla", direccion: "Blvd. Universitario 405", horarios: ["10:00 AM", "10:30 AM", "11:30 AM", "12:00 PM", "12:30 PM", "5:00 PM", "5:30 PM"], diasDisponibles: [2,4] },
+                { id: 5, nombre: "Plaza de las Américas", direccion: "Av. Constituyentes Ote. 183", horarios: ["11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM"], diasDisponibles: [6] }
+            ];
+            
+            const punto = puntos.find(p => p.id === pointId);
+            if (!punto) return;
+
+            window.selectedPoint = punto;
+            window.selectedDay = null;
+            window.selectedSchedule = null;
+
+            const buttons = document.querySelectorAll('.delivery-btn');
+            buttons.forEach(btn => {
+                btn.classList.toggle('active', parseInt(btn.dataset.id) === pointId);
+            });
+
+            const daySection = document.getElementById('daySection');
+            if (daySection) {
+                daySection.style.display = 'block';
+            }
+            
+            const dayContainer = document.getElementById('dayOptions');
+            if (dayContainer) {
+                const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+                let html = '';
+                punto.diasDisponibles.forEach((dia) => {
+                    html += `
+                        <button class="day-btn" onclick="selectDayRespaldo('${dias[dia-1]}')">
+                            ${dias[dia-1]}
+                        </button>
+                    `;
+                });
+                dayContainer.innerHTML = html;
+            }
+
+            const scheduleSection = document.getElementById('scheduleSection');
+            if (scheduleSection) {
+                scheduleSection.style.display = 'none';
+            }
+            
+            const summary = document.getElementById('deliverySummary');
+            if (summary) {
+                summary.style.display = 'none';
+            }
+        }
+
+        function selectDayRespaldo(dayDisplay) {
+            console.log('📅 Día seleccionado (respaldo):', dayDisplay);
+            window.selectedDay = dayDisplay;
+
+            const buttons = document.querySelectorAll('.day-btn');
+            buttons.forEach(btn => {
+                btn.classList.toggle('active', btn.textContent === dayDisplay);
+            });
+
+            const scheduleSection = document.getElementById('scheduleSection');
+            if (scheduleSection) {
+                scheduleSection.style.display = 'block';
+            }
+
+            const punto = window.selectedPoint;
+            const scheduleContainer = document.getElementById('scheduleOptions');
+            if (scheduleContainer && punto) {
+                let html = '';
+                punto.horarios.forEach((horario) => {
+                    html += `
+                        <button class="schedule-btn" onclick="selectScheduleRespaldo('${horario}')">
+                            ${horario}
+                        </button>
+                    `;
+                });
+                scheduleContainer.innerHTML = html;
+            }
+
+            updateDeliverySummaryRespaldo();
+        }
+
+        function selectScheduleRespaldo(horario) {
+            console.log('🕐 Horario seleccionado (respaldo):', horario);
+            window.selectedSchedule = horario;
+
+            const buttons = document.querySelectorAll('.schedule-btn');
+            buttons.forEach(btn => {
+                btn.classList.toggle('active', btn.textContent === horario);
+            });
+
+            updateDeliverySummaryRespaldo();
+        }
+
+        function updateDeliverySummaryRespaldo() {
+            const summary = document.getElementById('deliverySummary');
+            if (!summary) return;
+            
+            const punto = window.selectedPoint;
+            const day = window.selectedDay;
+            const schedule = window.selectedSchedule;
+            
+            if (punto && day && schedule) {
+                summary.style.display = 'block';
+                document.getElementById('selectedPoint').textContent = `${punto.nombre} - ${punto.direccion}`;
+                document.getElementById('selectedDay').textContent = day;
+                document.getElementById('selectedSchedule').textContent = schedule;
+            } else {
+                summary.style.display = 'none';
+            }
+        }
 
         // ========== INICIALIZAR ==========
 
@@ -272,7 +448,15 @@
             console.log('🚀 Inicializando página del carrito...');
             renderCart();
             updateCartBadge();
-            renderDeliveryOptions();
+            
+            // Intentar cargar puntos de entrega
+            if (typeof renderDeliveryOptions === 'function') {
+                console.log('✅ renderDeliveryOptions encontrado en carrito.js');
+                renderDeliveryOptions();
+            } else {
+                console.warn('⚠️ renderDeliveryOptions no está en carrito.js, usando respaldo');
+                renderDeliveryOptionsRespaldo();
+            }
         });
 
         // Hacer funciones globales
@@ -281,6 +465,10 @@
         window.clearCartAndRender = clearCartAndRender;
         window.renderCart = renderCart;
         window.removeFromCart = removeFromCart;
+        window.selectPointRespaldo = selectPointRespaldo;
+        window.selectDayRespaldo = selectDayRespaldo;
+        window.selectScheduleRespaldo = selectScheduleRespaldo;
+        window.updateDeliverySummaryRespaldo = updateDeliverySummaryRespaldo;
     </script>
 
 </body>
