@@ -139,36 +139,6 @@ function addToCartWithVariants(productId, productName, productPage) {
     }, 1500);
 }
 
-// ========== FUNCIÓN PARA NOTIFICACIONES ==========
-function showNotification(message) {
-    // Eliminar notificaciones anteriores
-    document.querySelectorAll('.cart-notification').forEach(el => el.remove());
-    
-    const notification = document.createElement('div');
-    notification.className = 'cart-notification';
-    notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: #f39c12;
-        color: #fff;
-        padding: 15px 25px;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(243, 156, 18, 0.4);
-        z-index: 9999;
-        font-weight: 500;
-        animation: slideIn 0.3s ease-out;
-        max-width: 400px;
-        border-left: 4px solid #e67e22;
-    `;
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease-in forwards';
-        setTimeout(() => notification.remove(), 300);
-    }, 3000);
-}
 
 
 // ========== CONFIGURACIÓN DE PUNTOS DE ENTREGA ==========
@@ -491,3 +461,7 @@ window.selectDay = selectDay;
 window.selectSchedule = selectSchedule;
 window.renderDeliveryOptions = renderDeliveryOptions;
 window.addToCartWithVariants = addToCartWithVariants;
+
+console.log('✅ carrito.js cargado completamente');
+console.log('📍 PUNTOS_ENTREGA:', PUNTOS_ENTREGA.length);
+console.log('🔧 renderDeliveryOptions:', typeof renderDeliveryOptions);
