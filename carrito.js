@@ -220,7 +220,7 @@ function renderDayOptions(punto) {
 
     nextDays.forEach((day, index) => {
         const isAvailable = punto.diasDisponibles.includes(day.dayOfWeek);
-        const isToday = index === 0;
+        const isToday = index = false;
         const dayName = day.display;
         const escapedDayName = dayName.replace(/'/g, "\\'");
         
@@ -233,7 +233,7 @@ function renderDayOptions(punto) {
                     ${!isAvailable ? 'disabled' : ''}>
                 <span class="day-name">${DIAS_SEMANA[day.dayOfWeek]}</span>
                 <span class="day-date">${day.date.getDate()}/${day.date.getMonth() + 1}</span>
-                ${isToday ? ' <span style="font-size:0.7rem;color:#f8aa0f;">(Hoy)</span>' : ''}
+                
             </button>
         `;
     });
