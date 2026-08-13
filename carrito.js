@@ -160,10 +160,10 @@ const PUNTOS_ENTREGA = [
     },
     {
         id: 3,
-        nombre: "Sendero",
-        direccion: "Av. Sur #789, Querétaro",
+        nombre: "Plaza de Toros",
+        direccion: "Autop. Celaya - Querétaro 5501-Km. 0.600, La Granja, 76180 Santiago de Querétaro, Qro.",
         horarios: ["11:30 AM", "12:00 PM", "12:30 PM"],
-        diasDisponibles: [1, 3, 5]
+        diasDisponibles: [5]
     },
     {
         id: 4,
@@ -178,6 +178,13 @@ const PUNTOS_ENTREGA = [
         direccion: "Av. Constituyentes Ote. 183, Plaza de las Americas, 76050 Santiago de Querétaro, Qro.",
         horarios: ["11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM"],
         diasDisponibles: [6] // Sábado
+    },
+    {
+        id: 6,
+        nombre: "Hilvana",
+        direccion: "Prol. Av. Zaragoza 80, Frida Kalho, 76178 Santiago de Querétaro, Qro.",
+        horarios: ["9:00 AM", "9:30 AM","10:00 AM","10:30 AM","11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM"],
+        diasDisponibles: [5] // Viernes
     }
 ];
 
