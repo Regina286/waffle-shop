@@ -149,14 +149,14 @@ const PUNTOS_ENTREGA = [
         nombre: "Aurrera Peñaflor",
         direccion: "Blvd Quintana Arrioja 4201, Ciudad del Sol, 76116 Santiago de Querétaro, Qro.",
         horarios: ["11:30 AM", "12:00 PM", "12:30 PM", "5:00 PM", "5:30 PM", "6:00 PM"],
-        diasDisponibles: [1, 3, 5] // Lunes, Miércoles, Viernes
+        diasDisponibles: [1, 3] // Lunes, Miércoles, Viernes
     },
     {
         id: 2,
         nombre: "Aurrera Satélite",
         direccion: "Av. de la Luz 401, Santa Ana, Cosmos, 76110 Santiago de Querétaro, Qro.",
         horarios: ["11:30 AM", "12:00 PM", "12:30 PM"],
-        diasDisponibles: [1, 3, 5]
+        diasDisponibles: [1, 3]
     },
     {
         id: 3,
